@@ -26,12 +26,13 @@ global varwait; % sigma_y^2; variance of waiting time (y)
 global mu_cost; % link cost
 global nlinks; % number of links
 
-sss = 5; % hourly data; which hour
+% data set - 6, an example
+sss = 6; % hourly data; which hour
 
-load(strcat('data/data_mu_cost_big_',num2str(sss)));
-load(strcat('data/data_travel_time_big_',num2str(sss)));
-load(strcat('data/data_route_big_',num2str(sss)));
-load(strcat('data/data_transfer_link_big_',num2str(sss)));
+load(strcat('input/data_mu_cost_big_',num2str(sss)));
+load(strcat('input/data_travel_time_big_',num2str(sss)));
+load(strcat('input/data_route_big_',num2str(sss)));
+load(strcat('input/data_transfer_link_big_',num2str(sss)));
 nlinks = length(mu_cost);
 
 for i = 1:length(route)
@@ -140,4 +141,4 @@ profile viewer;
 
 %% save results in a .mat file
 
-save(strcat('res_',num2str(sss),'.mat'),'final_res','final_value');
+save(strcat('output/res_',num2str(sss),'.mat'),'final_res','final_value');

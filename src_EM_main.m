@@ -139,6 +139,5 @@ for i = 1:10
 end
 profile viewer;
 
-%% save results in a .mat file
-
+%% save results in a *.mat file
 save(strcat('output/res_',num2str(sss),'.mat'),'final_res','final_value');

@@ -37,7 +37,8 @@ for i = 1: num
     time2 = -0.5*log(sigma2_mat_new);
     % MNL model
     dschoice1 = temp_theta_new(1)*(mu_mat_new-transfer_mat)+temp_theta_new(2)*transfer_mat;
-    dschoice2 = -log(sum(exp(dschoice1)));
+    %dschoice2 = -log(sum(exp(dschoice1)));
+    dschoice2 = -logsumexp(dschoice1,1)
     % using bsxfun (seems to be slower on my PC)
     % time1 = bsxfun(@rdivide,-0.5*bsxfun(@minus,travel_time{i},mu_mat_new').^2,sigma2_mat_new');
     % using repmat 
